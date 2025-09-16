@@ -1,15 +1,16 @@
 name: Test out echo 
 on: 
-  push: [main]
+  push: 
+    branches: [main]
   workflow_dispatch:
 
 jobs: 
   first_job:
-  name: Run first job
-  runs: ubuntu-latest
+    name: Run first job
+    runs-on: ubuntu-latest
 
     steps:
-      name: Run an echo
+    - name: Run an echo
       run: echo " Hello Nathaneal"
     
   
