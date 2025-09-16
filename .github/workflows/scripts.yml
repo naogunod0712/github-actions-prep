@@ -1,7 +1,8 @@
 name: Testing out Github Environment
 on: 
   workflow_dispatch: 
-
+env: 
+  profession: "Security consultant"
 jobs: 
   Script_action: 
     name: Running Github script
@@ -15,5 +16,13 @@ jobs:
      - name: Trying out Github ENV
        run: | 
          echo "myhair=black" >> "GITHUB_ENV"
+ 
+         
+     - name: Trying out Github ENV to show
+       run: | 
          echo "I think my hair is $myhair"
+
+     - name: Trying out Github env
+       run: | 
+         echo "I work as a ${{ env.profession }}
     
