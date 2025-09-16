@@ -1,2 +1,2 @@
 # github-actions-prep
-Folder to be used for Github actions
+Folder to be used for Github actions exam prep
