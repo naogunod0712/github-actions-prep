@@ -1,4 +1,4 @@
-name: Testing out Github Script
+name: Testing out Github Environment
 on: 
   workflow_dispatch: 
 
@@ -6,17 +6,9 @@ jobs:
   Script_action: 
     name: Running Github script
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
-     - uses: actions/checkout@v2
-     - uses: actions/github-script@v2
-       with:
-         github-token: ${{secrets.GITHUB_TOKEN}}
-         script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "🎉 You've created this issue comment using GitHub Script!!!"
-            })
+     - name: Runs to check environment
+       run: echo "my name is ${{ dev.NAME }} and I live in ${{dev.LOCATION}}"
     
