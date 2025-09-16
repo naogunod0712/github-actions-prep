@@ -1,28 +1,25 @@
-name: Testing out Github Environment
-on: 
-  workflow_dispatch: 
-env: 
+name: Testing out GitHub Environment
+on:
+  workflow_dispatch:
+env:
   profession: "Security consultant"
-jobs: 
-  Script_action: 
-    name: Running Github script
+jobs:
+  Script_action:
+    name: Running GitHub Script
     runs-on: ubuntu-latest
     environment: dev
-
     steps:
-     - name: Runs to check environment
-       run: echo "my name is ${{ vars.NAME }} and I live in ${{vars.LOCATION}}"
+      - name: Check environment variables
+        run: echo "My name is ${{ vars.NAME }} and I live in ${{ vars.LOCATION }}"
 
-     - name: Trying out Github ENV
-       run: | 
-         echo "myhair=black" >> "GITHUB_ENV"
- 
-         
-     - name: Trying out Github ENV to show
-       run: | 
-         echo "I think my hair is $myhair"
+      - name: Set GitHub environment variable
+        run: |
+          echo "myhair=black" >> $GITHUB_ENV
 
-     - name: Trying out Github env
-       run: | 
-         echo "I work as a ${{ env.profession }}"
-    
+      - name: Use GitHub environment variables
+        run: |
+          echo "I work as a ${{ env.profession }} and my hair is ${{ env.myhair }}"
+
+      - name: Demonstrate environment variable access
+        run: |
+          echo "I think my hair is ${{ env.myhair }}
