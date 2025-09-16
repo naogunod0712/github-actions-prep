@@ -1,0 +1,15 @@
+name: Test out echo 
+on: 
+  push: [main]
+  workflow_dispatch:
+
+jobs: 
+  first_job:
+  name: Run first job
+  runs: ubuntu-latest
+
+    steps:
+      name: Run an echo
+      run: echo " Hello Nathaneal"
+    
+  
