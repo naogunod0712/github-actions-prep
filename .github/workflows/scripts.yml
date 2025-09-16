@@ -10,5 +10,10 @@ jobs:
 
     steps:
      - name: Runs to check environment
-       run: echo "my name is ${{ dev.NAME }} and I live in ${{dev.LOCATION}}"
+       run: echo "my name is ${{ vars.NAME }} and I live in ${{vars.LOCATION}}"
+
+     - name: Trying out Github ENV
+       run: | 
+         echo "myhair=black" >> "GITHUB_ENV"
+         echo "I think my hair is $myhair"
     
