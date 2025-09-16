@@ -12,5 +12,12 @@ jobs:
     steps:
     - name: Run an echo
       run: echo " Hello Nathaneal"
+
+  second_job:
+    name: Run second job
+    runs-on: ubuntu-latest
     
+    steps:
+    - name: Run an date function
+      run: echo $date
   
